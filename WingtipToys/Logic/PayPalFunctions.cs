@@ -33,9 +33,9 @@ public class NVPAPICaller
     //Replace <Your API Username> with your API Username
     //Replace <Your API Password> with your API Password
     //Replace <Your Signature> with your Signature
-    public string APIUsername = "<sb-pz8j511011849_api1.business.example.com>";
-    private string APIPassword = "<NNT3NHL7ZLK35BUY>";
-    private string APISignature = "<AGRlivd-w1.x76rooYVtlFKN43YvA3oJojwug.SHMJCAekjK0qly9am9";
+    public string APIUsername = "sb-pz8j511011849_api1.business.example.com";
+    private string APIPassword = "NNT3NHL7ZLK35BUY";
+    private string APISignature = "AGRlivd-w1.x76rooYVtlFKN43YvA3oJojwug.SHMJCAekjK0qly9am9";
     private string Subject = "";
     private string BNCode = "PP-ECWizard";
 
@@ -195,9 +195,10 @@ public class NVPAPICaller
                 myWriter.Write(strPost);
             }
         }
-        catch (Exception)
+        catch (Exception e)
         {
-            // No logging for this tutorial.
+            // Log the exception.
+            WingtipToys.Logic.ExceptionUtility.LogException(e, "HttpCall in PayPalFunction.cs");
         }
 
         //Retrieve the Response returned from the NVP API call to PayPal.
